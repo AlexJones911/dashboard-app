@@ -31,7 +31,7 @@ const App = () => {
     <div className="App">
       <div className="layout">
         <div className="profile-section">
-          {selectedUser && <UserProfile userId={selectedUser} />}
+          <UserProfile userId={selectedUser} />
         </div>
         <div className="chatbot-section">
           <Chatbot />
