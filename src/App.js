@@ -1,25 +1,69 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import UserProfile from './UserProfile';
+import Chatbot from './Chatbot';
+import MessageResponder from './MessageResponder';
+import './MessageResponder.css';
+import './UserDropdown.css';
 import './App.css';
+import './UserProfile.css';
 
-function App() {
+const App = () => {
+  const [users, setUsers] = useState([{ name: 'Loading...', id: 0 }]);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.post('http://127.0.0.1:3001/get_usernames');
+        setUsers(response.data);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+        setUsers([]);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  const UserDropdown = () => {
+    const handleSelectUser = (event) => {
+      const userId = event.target.value;
+      setSelectedUser(userId);
+    };
+
+    const handleRefresh = () => {
+      // Refresh functionality here
+    };
+
+    return (
+      <div>
+        <select onChange={handleSelectUser}>
+          {users.map(user => (
+            <option key={user.id} value={user.id}>{user.name}</option>
+          ))}
+        </select>
+        <button onClick={handleRefresh}>Refresh</button>
+      </div>
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="layout">
+        <div className="profile-section">
+          <UserDropdown />
+          {selectedUser && <UserProfile userId={selectedUser} />}
+        </div>
+        <div className="chatbot-section">
+          <Chatbot />
+        </div>
+        <div className="message-responder-section">
+          <MessageResponder />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
