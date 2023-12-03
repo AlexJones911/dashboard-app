@@ -26,33 +26,11 @@ const App = () => {
     fetchUsers();
   }, []);
 
-  const UserDropdown = () => {
-    const handleSelectUser = (event) => {
-      const userId = event.target.value;
-      setSelectedUser(userId);
-    };
-
-    const handleRefresh = () => {
-      // Refresh functionality here
-    };
-
-    return (
-      <div>
-        <select onChange={handleSelectUser}>
-          {users.map(user => (
-            <option key={user.id} value={user.id}>{user.name}</option>
-          ))}
-        </select>
-        <button onClick={handleRefresh}>Refresh</button>
-      </div>
-    );
-  };
 
   return (
     <div className="App">
       <div className="layout">
         <div className="profile-section">
-          <UserDropdown />
           {selectedUser && <UserProfile userId={selectedUser} />}
         </div>
         <div className="chatbot-section">
