@@ -21,4 +21,14 @@
   .user-profile.focused {
     border: 2px solid green;
   }
+
+  .dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+  }
   
