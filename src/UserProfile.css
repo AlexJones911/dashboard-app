@@ -21,4 +21,10 @@
   .user-profile.focused {
     border: 2px solid green;
   }
-  
+  .user-profile {
+  /* Add your CSS rules here */
+}
+
+.user-profile.focused {
+  /* Add your CSS rules for the focused state here */
+}
