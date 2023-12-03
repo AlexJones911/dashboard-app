@@ -10,7 +10,7 @@ import './UserProfile.css';
 
 const App = () => {
   const [users, setUsers] = useState([{ name: 'Loading...', id: 0 }]);
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState("");
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -31,6 +31,11 @@ const App = () => {
     <div className="App">
       <div className="layout">
         <div className="profile-section">
+          <select className="dropdown" onChange={(e) => setSelectedUser(e.target.value)}>
+            <option value="">Users</option>
+            <option value="1">User 1</option>
+            <option value="2">User 2</option>
+          </select>
           <UserProfile userId={selectedUser} />
         </div>
         <div className="chatbot-section">

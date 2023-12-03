@@ -23,10 +23,14 @@ const UserProfile = ({ userId }) => {
       tabIndex="0" 
       ref={userProfileRef}
     >
-      <h2>User Profile (ID: {userId})</h2>
-      <p>Last 24h Slack Engagement: [Placeholder]</p>
-      <p>Jira Project Activity: [Placeholder]</p>
-      <p>GitHub Contributions: [Placeholder]</p>
+      {userId && (
+        <>
+          <h2>User Profile (ID: {userId})</h2>
+          <p>Last 24h Slack Engagement: [Placeholder]</p>
+          <p>Jira Project Activity: [Placeholder]</p>
+          <p>GitHub Contributions: [Placeholder]</p>
+        </>
+      )}
       <select className="dropdown">
         <option value="">Users</option>
         <option value="1">User 1</option>
