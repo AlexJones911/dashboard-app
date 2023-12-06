@@ -1,0 +1,46 @@
+.message-responder {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 356px; /* Fixed width */
+    height: 600px; /* Fixed height */
+    overflow: auto; /* Scrollable if content exceeds height */
+    outline: none;
+  }
+  .message-responder.focused {
+    border: 2px solid green; /* Green frame for focused container */
+  }
+  
+  .message-responder select, 
+  .message-responder textarea {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .message-responder .suggestions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .message-responder .suggestions button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .message-responder .suggestions button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  

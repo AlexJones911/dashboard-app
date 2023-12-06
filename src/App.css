@@ -1,38 +1,42 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: start;
+  height: 100vh; /* Adjust height as needed */
+  padding-top: 50px;
+  padding-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.layout {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.profile-section, .chatbot-section, .message-responder-section {
+  width: 400px; /* Fixed width */
+  height: 600px; /* Fixed height */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  overflow: auto; /* Ensures content overflows are scrollable */
+}
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .profile-section, .chatbot-section {
+    flex: 0 0 auto; /* Allow sections to adjust size on smaller screens */
+    max-width: 90%; /* Adjust width for smaller screens */
+    max-height: unset; /* Remove fixed height */
+    margin-bottom: 20px;
   }
 }
+
+/* Add any additional styling as required */

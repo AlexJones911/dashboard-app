@@ -1,0 +1,26 @@
+.user-dropdown {
+    margin-bottom: 20px;
+  }
+  
+  .user-dropdown select {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .user-dropdown button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .user-dropdown button:hover {
+    background-color: #0056b3;
+  }
+  
